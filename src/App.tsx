@@ -4,17 +4,17 @@ import ThreeBackground from './components/ThreeBackground';
 import { Text3D } from './components/Text3D';
 import { QuoteModal } from './components/QuoteModal';
 import { AdminDashboard } from './components/AdminDashboard';
-import { 
-  Phone, 
-  Sun, 
-  Battery, 
-  Wind, 
-  Star, 
-  CheckCircle2, 
-  MapPin, 
-  Menu, 
-  X, 
-  ChevronRight, 
+import {
+  Phone,
+  Sun,
+  Battery,
+  Wind,
+  Star,
+  CheckCircle2,
+  MapPin,
+  Menu,
+  X,
+  ChevronRight,
   Zap,
   ShieldCheck,
   Award
@@ -35,21 +35,15 @@ const Navbar = ({ onOpenModal }: { onOpenModal: () => void }) => {
   }, []);
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-slate-950/90 backdrop-blur-md border-b border-white/10 py-3' : 'bg-transparent py-5'
-      }`}
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-950/90 backdrop-blur-md border-b border-white/10 py-3' : 'bg-transparent py-5'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="bg-amber-500 p-2 rounded-lg shadow-[0_0_15px_rgba(245,158,11,0.5)] animate-pulse">
-              <Sun className="w-6 h-6 text-slate-950 fill-slate-950" />
-            </div>
-            <span className="text-2xl font-display font-bold tracking-tight text-white drop-shadow-lg">
-              <span className="text-amber-500">Gold Coast Solar Power Solutions</span>
-            </span>
+            <img src="https://gold-coast-solar-power-solutions.com.au/wp-content/uploads/2018/08/GCSPS-logo-white.png" alt="Gold Coast Solar Power Solutions Logo" className="h-12 object-contain" />
           </div>
 
           {/* Desktop Nav */}
@@ -57,16 +51,16 @@ const Navbar = ({ onOpenModal }: { onOpenModal: () => void }) => {
             <a href="#services" className="text-sm font-medium text-slate-300 hover:text-amber-400 transition-colors hover:scale-105 transform duration-200">Services</a>
             <a href="#about" className="text-sm font-medium text-slate-300 hover:text-amber-400 transition-colors hover:scale-105 transform duration-200">About</a>
             <a href="#testimonials" className="text-sm font-medium text-slate-300 hover:text-amber-400 transition-colors hover:scale-105 transform duration-200">Reviews</a>
-            
+
             <div className="flex items-center gap-4 ml-4">
-              <a 
-                href="tel:1300000000" 
+              <a
+                href="tel:1300000000"
                 className="flex items-center gap-2 text-white font-medium hover:text-amber-400 transition-colors hover:scale-105 transform duration-200"
               >
                 <Phone className="w-4 h-4 animate-bounce" />
                 <span>+61 7 5522 8980</span>
               </a>
-              <motion.button 
+              <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={onOpenModal}
@@ -78,7 +72,7 @@ const Navbar = ({ onOpenModal }: { onOpenModal: () => void }) => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="md:hidden text-white p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -90,14 +84,14 @@ const Navbar = ({ onOpenModal }: { onOpenModal: () => void }) => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="md:hidden bg-slate-900/98 backdrop-blur-2xl border-b border-white/10 overflow-hidden absolute w-full top-full left-0 shadow-2xl z-50"
           >
-            <motion.div 
+            <motion.div
               initial="hidden"
               animate="visible"
               variants={{
@@ -128,8 +122,8 @@ const Navbar = ({ onOpenModal }: { onOpenModal: () => void }) => {
                   {item.name}
                 </motion.a>
               ))}
-              
-              <motion.div 
+
+              <motion.div
                 variants={{
                   hidden: { opacity: 0, y: 10 },
                   visible: { opacity: 1, y: 0 }
@@ -140,8 +134,8 @@ const Navbar = ({ onOpenModal }: { onOpenModal: () => void }) => {
                   <Phone className="w-6 h-6 text-amber-500" />
                   +61 7 5522 8980
                 </a>
-                <button 
-                  onClick={() => { setIsMobileMenuOpen(false); onOpenModal(); }} 
+                <button
+                  onClick={() => { setIsMobileMenuOpen(false); onOpenModal(); }}
                   className="block w-full text-center bg-amber-500 hover:bg-amber-400 text-slate-950 py-4 rounded-xl font-bold text-xl shadow-[0_4px_20px_rgba(245,158,11,0.3)] active:scale-[0.98] transition-all"
                 >
                   Get a Free Quote
@@ -165,19 +159,20 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Image with Overlay - Reduced opacity to show 3D background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
+        <img src="https://gold-coast-solar-power-solutions.com.au/wp-content/uploads/2022/12/solar-panel-installation-gold-coast-reliable-services.jpg" alt="Solar Installation" className="absolute inset-0 w-full h-full object-cover opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/60 z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent z-10"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center text-center">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, type: "spring", bounce: 0.4 }}
           style={{ perspective: 1000, y: y1, opacity }}
           className="max-w-4xl backdrop-blur-sm bg-slate-950/30 p-8 rounded-3xl border border-white/5 shadow-2xl z-20 flex flex-col items-center"
         >
-          <motion.div 
+          <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -189,7 +184,7 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => {
             </span>
             #1 Rated Solar Installer in QLD
           </motion.div>
-          
+
           <motion.h1 style={{ y: y2 }} className="text-5xl md:text-7xl font-display font-bold text-white leading-[1.1] mb-6 drop-shadow-2xl">
             Power Your Home. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-amber-600 animate-gradient-x bg-[length:200%_auto]">
@@ -197,13 +192,13 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => {
             </span> <br />
             Go Solar Today.
           </motion.h1>
-          
+
           <motion.p style={{ y: y2 }} className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed max-w-xl drop-shadow-md">
             Speak directly to fully qualified local electricians and CEC Accredited installers—not a pushy sales call centre.
           </motion.p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.button 
+            <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(245,158,11,0.6)" }}
               whileTap={{ scale: 0.95 }}
               onClick={onOpenModal}
@@ -215,10 +210,10 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => {
               </span>
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
             </motion.button>
-            <motion.a 
+            <motion.a
               whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
               whileTap={{ scale: 0.95 }}
-              href="#services" 
+              href="#services"
               className="inline-flex items-center justify-center bg-white/5 backdrop-blur-md border border-white/10 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-white/10"
             >
               View Services
@@ -229,23 +224,21 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Trust Bar */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.8 }}
           className="mt-16 pt-8 border-t border-white/10 flex flex-wrap gap-x-8 gap-y-4 items-center text-slate-400 text-sm font-medium backdrop-blur-sm bg-slate-950/20 rounded-xl p-4 inline-flex"
         >
           <div className="flex items-center gap-2 hover:text-amber-400 transition-colors cursor-default group">
+            <img src="https://gold-coast-solar-power-solutions.com.au/wp-content/uploads/2018/10/ja-solar-logo.png" className="h-8 object-contain opacity-70 group-hover:opacity-100 transition-opacity bg-white px-2 py-1 rounded" alt="JA Solar" />
+          </div>
+          <div className="flex items-center gap-2 hover:text-amber-400 transition-colors cursor-default group">
+            <img src="https://gold-coast-solar-power-solutions.com.au/wp-content/uploads/2018/10/sungrow-logo.png" className="h-8 object-contain opacity-70 group-hover:opacity-100 transition-opacity bg-white px-2 py-1 rounded" alt="Sungrow" />
+          </div>
+          <div className="flex items-center gap-2 hover:text-amber-400 transition-colors cursor-default group">
             <ShieldCheck className="w-5 h-5 text-amber-500 group-hover:scale-110 transition-transform" />
             <span>Clean Energy Council Approved</span>
-          </div>
-          <div className="flex items-center gap-2 hover:text-amber-400 transition-colors cursor-default group">
-            <Zap className="w-5 h-5 text-amber-500 group-hover:scale-110 transition-transform" />
-            <span>Tesla Certified Installer</span>
-          </div>
-          <div className="flex items-center gap-2 hover:text-amber-400 transition-colors cursor-default group">
-            <Award className="w-5 h-5 text-amber-500 group-hover:scale-110 transition-transform" />
-            <span>QLD Electrical Contractor Licence</span>
           </div>
         </motion.div>
       </div>
@@ -269,11 +262,11 @@ const Counter = ({ end, suffix = "", label }: { end: number, suffix?: string, la
 
   useEffect(() => {
     if (!hasAnimated) return;
-    
+
     let start = 0;
     const duration = 2000;
     const increment = end / (duration / 16);
-    
+
     const timer = setInterval(() => {
       start += increment;
       if (start >= end) {
@@ -283,7 +276,7 @@ const Counter = ({ end, suffix = "", label }: { end: number, suffix?: string, la
         setCount(Math.floor(start));
       }
     }, 16);
-    
+
     return () => clearInterval(timer);
   }, [end, hasAnimated]);
 
@@ -340,7 +333,7 @@ const ServiceCard = ({ icon: Icon, title, description, roi, onQuote }: { icon: a
   const rotateY = useTransform(mouseX, [-0.5, 0.5], [-7, 7]);
 
   return (
-    <motion.div 
+    <motion.div
       ref={cardRef}
       onMouseMove={onMouseMove}
       onMouseLeave={() => {
@@ -358,23 +351,23 @@ const ServiceCard = ({ icon: Icon, title, description, roi, onQuote }: { icon: a
       <motion.div style={{ z: 50, y: parallaxY_Icon }} className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
         <Icon className="w-24 h-24 text-amber-500" />
       </motion.div>
-      
+
       <motion.div style={{ z: 75, y: parallaxY_Icon }} className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors text-amber-500 shadow-lg shadow-amber-500/20">
         <Icon className="w-6 h-6" />
       </motion.div>
-      
+
       <motion.h3 style={{ z: 60, y: parallaxY_Content }} className="text-2xl font-display font-bold text-white mb-3">{title}</motion.h3>
-      
+
       <motion.div style={{ z: 50, y: parallaxY_Content }} className="flex items-center gap-2 text-emerald-400 text-sm font-semibold mb-4 bg-emerald-400/10 py-1 px-3 rounded-full w-fit">
         <Zap className="w-3 h-3" />
         {roi}
       </motion.div>
-      
+
       <motion.p style={{ z: 40, y: parallaxY_Content }} className="text-slate-400 mb-8 leading-relaxed">
         {description}
       </motion.p>
-      
-      <motion.button 
+
+      <motion.button
         style={{ z: 60 }}
         onClick={(e) => {
           e.stopPropagation();
@@ -401,28 +394,28 @@ const Services = ({ onOpenModal }: { onOpenModal: (service: string) => void }) =
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <ServiceCard 
+          <ServiceCard
             icon={Sun}
             title="Residential Solar"
             roi="Save up to $2,500/yr"
             description="Premium Tier-1 panels and inverters designed for Australian conditions. Slash your quarterly bills immediately."
             onQuote={() => onOpenModal("Residential Solar")}
           />
-          <ServiceCard 
+          <ServiceCard
             icon={Wind}
             title="Commercial Solar"
             roi="ROI in 3-4 Years"
             description="Scale up your savings. We handle everything from engineering to grid connection for businesses of all sizes."
             onQuote={() => onOpenModal("Commercial Solar")}
           />
-          <ServiceCard 
+          <ServiceCard
             icon={Battery}
             title="Battery Storage"
             roi="Power Through Blackouts"
             description="Store your excess solar energy for use at night. Tesla Powerwall and Sungrow certified installers."
             onQuote={() => onOpenModal("Battery Storage")}
           />
-          <ServiceCard 
+          <ServiceCard
             icon={Zap}
             title="Ducted Air Con"
             roi="Smart Climate Control"
@@ -455,25 +448,26 @@ const TestimonialCard = ({ name, location, text }: { name: string, location: str
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-24 bg-slate-900 border-y border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="testimonials" className="py-24 bg-slate-900 border-y border-white/5 relative overflow-hidden">
+      <img src="https://gold-coast-solar-power-solutions.com.au/wp-content/uploads/2025/07/Best-solar-panel-installation-in-gold-coast.webp" className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none" alt="" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 flex flex-col items-center">
           <h2 className="text-amber-500 font-medium tracking-wide uppercase text-sm mb-3">Customer Stories</h2>
           <Text3D text="Don't Just Take Our Word For It" className="text-4xl font-display font-bold text-white justify-center" />
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <TestimonialCard 
+          <TestimonialCard
             name="Sarah Jenkins"
             location="Gold Coast"
             text="The team was incredibly professional. They arrived exactly when they said they would, left the site spotless, and the system is generating even more power than quoted. Highly recommend!"
           />
-          <TestimonialCard 
+          <TestimonialCard
             name="Michael Ross"
             location="Brisbane South"
             text="Refreshing to deal with a tradesman rather than a salesperson. No pressure, just honest advice. The installation of our 10kW system was seamless."
           />
-          <TestimonialCard 
+          <TestimonialCard
             name="David Chen"
             location="Byron Bay"
             text="We installed both solar and ducted air con with Gold Coast Solar Power Solutions. The integration is fantastic - we basically run our AC for free during the day now. Great ROI."
@@ -498,7 +492,7 @@ const Contact = () => {
             <p className="text-slate-400 text-lg mb-8">
               We are proud to service the entire South East Queensland and Northern NSW region. From the Sunshine Coast down to Ballina.
             </p>
-            
+
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-3 text-white">
                 <MapPin className="text-amber-500 w-5 h-5" />
@@ -569,18 +563,13 @@ const Footer = ({ onAdminClick }: { onAdminClick: () => void }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <div className="bg-amber-500 p-1.5 rounded-md">
-              <Sun className="w-4 h-4 text-slate-950 fill-slate-950" />
-            </div>
-            <span className="text-xl font-display font-bold text-white">
-              <span className="text-amber-500">Gold Coast Solar Power Solutions</span>
-            </span>
+            <img src="https://gold-coast-solar-power-solutions.com.au/wp-content/uploads/2018/08/GCSPS-logo-white.png" alt="Gold Coast Solar Power Solutions Logo" className="h-8 object-contain" />
           </div>
-          
+
           <div className="text-slate-500 text-center md:text-right">
             <p>&copy; {new Date().getFullYear()} Gold Coast Solar Power Solutions. All rights reserved.</p>
             <p className="mt-1">QLD Lic: 12345678 | NSW Lic: 987654C | ARC: L123456</p>
-            <button 
+            <button
               onClick={onAdminClick}
               className="mt-6 text-slate-600 hover:text-amber-500 text-[11px] uppercase tracking-[0.2em] transition-all duration-300 border border-white/5 hover:border-amber-500/30 px-3 py-1 rounded-full bg-white/5 hover:bg-amber-500/5 cursor-pointer relative z-10"
             >
